@@ -1,0 +1,11 @@
+*.o
+*.elf
+*.prx
+EBOOT.PBP
+PARAM.SFO
+__pycache__/
+tests/ms0/
+tests/out/
+tests/test_shelf
+# the picture stick: holds art taken from your own games
+tests/docrun/
