@@ -6,8 +6,8 @@ Shelf runs on its own. The plugins are optional, and each one adds something to 
 
 | | |
 |---|---|
-| Version | 1.0 |
-| Build | Nov 24 2026 10:17:37 |
+| Version | 1.1 |
+| Build | Nov 24 2026 13:32:47 |
 | Tested on | PSP-3000, firmware 6.61, ARK-5 |
 
 > **Disclosure.** Shelf was written by Claude, Anthropic’s AI model, from my ideas and my testing on a PSP-3000. I’m not a PSP programmer, and nothing has been tested beyond my own console. Please read the [known issues](docs/known-issues.md) before relying on it.

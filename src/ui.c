@@ -543,7 +543,7 @@ static void draw_playing(ShUi *ui, const ShSurf *s)
         wrap2(in->cp_last, 26, l);
         gfx_text(s, x, y, l[0], C_RED); y += 10;
         if (l[1][0]) { gfx_text(s, x, y, l[1], C_RED); y += 10; }
-    } else { gfx_text(s, x, y, "none yet", C_DIM); y += 10; }
+    } else { gfx_text(s, x, y, "None yet", C_DIM); y += 10; }
     y += 6;
     gfx_text(s, x, y, "Played", C_GREY);
     if (in->cp_secs) sh_format_played(in->cp_secs, b, sizeof(b)); else sh_strcpy(b, sizeof(b), "-");
@@ -556,7 +556,7 @@ static void draw_playing(ShUi *ui, const ShSurf *s)
         sh_snprintf(b, sizeof(b), "%d / %d", in->em_got, in->em_total);
         gfx_text(s, x + 72, y, b, C_GOLD); y += 11;
         gfx_bar(s, x, y, 204, 4, in->em_got, in->em_total, C_GOLD); y += 10;
-    } else { gfx_text(s, x + 72, y, "no game file", C_DIM); y += 14; }
+    } else { gfx_text(s, x + 72, y, "No game file", C_DIM); y += 14; }
     if (rs >= 0) {
         char nm[16];
         y += 2;
@@ -737,7 +737,7 @@ static void draw_all(ShUi *ui, const ShSurf *s)
         else if (!in->playing) xx += gfx_text(s, xx, y + 17, "Not started", C_GREY) + 16;
         if (in->em_total >= 0) { sh_snprintf(b, sizeof(b), "Emblem %d / %d", in->em_got, in->em_total); gfx_text(s, xx, y + 17, b, C_GOLD); }
         int lx = 14;
-        static const struct { char k; const char *t; } leg[4] = { { 'D', "playing" }, { 'P', "suspended" }, { 'S', "state" }, { 'C', "completed" } };
+        static const struct { char k; const char *t; } leg[4] = { { 'D', "Playing" }, { 'P', "Suspended" }, { 'S', "State" }, { 'C', "Completed" } };
         for (int k = 0; k < 4; k++) { gfx_badge(s, lx, y + 28, leg[k].k); lx += 12 + gfx_text(s, lx + 12, y + 29, leg[k].t, C_DIM) + 10; }
     }
     static const Key k[] = { { "X", "Play" }, { "S", "Info" }, { "T", "Category" }, { "O", "Back" }, { "SELECT", "Options" }, { "START", "Settings" } };
@@ -782,7 +782,7 @@ static void draw_finished(ShUi *ui, const ShSurf *s)
             sh_snprintf(b, sizeof(b), "%d / %d", in->em_got, in->em_total);
             gfx_text(s, 286, y + 18, b, C_GOLD);
             gfx_bar(s, 286 + gfx_tw(b) + 8, y + 20, 80, 4, in->em_got, in->em_total, C_GOLD);
-        } else gfx_text(s, 286, y + 18, "no game file", C_DIM);
+        } else gfx_text(s, 286, y + 18, "No game file", C_DIM);
         gfx_text(s, 94, y + 31, "Last entry", C_GREY);
         cut(in->cp_last[0] ? in->cp_last : "-", 34, t);
         gfx_text(s, 182, y + 31, t, in->cp_last[0] ? C_RED : C_DIM);
@@ -822,7 +822,7 @@ static void draw_info(ShUi *ui, const ShSurf *s)
     cut(ui_title(ui, g), 38, t);
     gfx_text(s, 22, 28, t, C_WHITE);
     if (in->cp_secs) { sh_format_played(in->cp_secs, b, sizeof(b)); strcat(b, " played"); }
-    else sh_strcpy(b, sizeof(b), in->playing ? "" : "not started");
+    else sh_strcpy(b, sizeof(b), in->playing ? "" : "Not started");
     gfx_text_r(s, 458, 28, b, C_GREY);
     gfx_hline(s, 20, 40, 440, C_LINE);
     /* the two pages, the open one underlined */
@@ -851,7 +851,7 @@ static void draw_info(ShUi *ui, const ShSurf *s)
                 gfx_text_r(s, 458, y, b, C_DIM);
                 y += 12;
             }
-            if (pages > 1) { sh_snprintf(b, sizeof(b), "page %d/%d", ui->ov_page + 1, pages); gfx_text_r(s, 458, 238, b, C_DIM); }
+            if (pages > 1) { sh_snprintf(b, sizeof(b), "Page %d/%d", ui->ov_page + 1, pages); gfx_text_r(s, 458, 238, b, C_DIM); }
         }
     } else if (in->em_total < 0) {
         gfx_text(s, 30, 76, "No Emblem file for this game.", C_GREY);
@@ -1039,7 +1039,7 @@ static void draw_quick(ShUi *ui, const ShSurf *s)
             int d = ui->up_pct - ui->up_pct0;
             sh_snprintf(b, sizeof(b), "%d%% > %d%%  (%s%d%%)", ui->up_pct0, ui->up_pct, d > 0 ? "+" : d < 0 ? "-" : "", d < 0 ? -d : d);
             gfx_text_r(s, x0 + w - 12, y + 20, b, d < 0 ? C_GOLD : C_GREEN);
-        } else gfx_text_r(s, x0 + w - 12, y + 20, "no reading", C_DIM);
+        } else gfx_text_r(s, x0 + w - 12, y + 20, "No reading", C_DIM);
     }
     static const Key k[] = { { "X", "Choose" }, { "O", "Close" } };
     keybar(s, k, 2);
@@ -1122,9 +1122,9 @@ static void draw_start(ShUi *ui, const ShSurf *s)
         if (k >= 0) { data_thm_path(in, k, p, sizeof(p)); pic_ok = img_read_thm(p, pic, PIC_W, PIC_H) == 0; }
     }
     gfx_rect(s, px, py, 208, 118, C_BLACK);
-    if (k < 0) gfx_text_c(s, px + 104, py + 54, "from the beginning", C_DIM);
+    if (k < 0) gfx_text_c(s, px + 104, py + 54, "From the beginning", C_DIM);
     else if (pic_ok) gfx_blit565_scaled(s, px, py, 208, 118, pic, PIC_W, PIC_H);
-    else gfx_text_c(s, px + 104, py + 54, "no picture", C_DIM);
+    else gfx_text_c(s, px + 104, py + 54, "No picture", C_DIM);
     gfx_frame(s, px - 1, py - 1, 210, 120, C_LINE, 1);
     gfx_text(s, x0 + 12, y0 + h - 14, "X on Home still goes straight to the newest.", C_DIM);
     static const Key keys[] = { { "X", "Start" }, { "O", "Back" } };

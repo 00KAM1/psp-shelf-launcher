@@ -114,16 +114,16 @@ u32 sh_parse_stamp(const char *s)
 
 void sh_format_ago(u32 now, u32 then, char *out, int size)
 {
-    if (!then) { sh_snprintf(out, size, "never"); return; }
+    if (!then) { sh_snprintf(out, size, "Never"); return; }
     if (then > now) then = now;
     u32 d = now - then;
-    if (d < 60) sh_snprintf(out, size, "just now");
+    if (d < 60) sh_snprintf(out, size, "Just now");
     else if (d < 1440) sh_snprintf(out, size, "%d hour%s ago", (int)(d / 60), d / 60 == 1 ? "" : "s");
-    else if (d < 2 * 1440) sh_snprintf(out, size, "yesterday");
+    else if (d < 2 * 1440) sh_snprintf(out, size, "Yesterday");
     else if (d < 14 * 1440) sh_snprintf(out, size, "%d days ago", (int)(d / 1440));
     else if (d < 60 * 1440) sh_snprintf(out, size, "%d weeks ago", (int)(d / (7 * 1440)));
     else if (d < 365 * 1440) sh_snprintf(out, size, "%d months ago", (int)(d / (30 * 1440)));
-    else sh_snprintf(out, size, "over a year ago");
+    else sh_snprintf(out, size, "Over a year ago");
 }
 
 void sh_format_played(u32 secs, char *out, int size)

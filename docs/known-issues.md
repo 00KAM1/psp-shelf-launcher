@@ -1,6 +1,6 @@
-# Shelf 1.0: known issues and limits
+# Shelf 1.1: known issues and limits
 
-Tested on one console: PSP-3000, firmware 6.61, ARK-5. Other models are untried. Build in this release: `built Nov 24 2026 10:17:37`.
+Tested on one console: PSP-3000, firmware 6.61, ARK-5. Other models are untried. Build in this release: `built Nov 24 2026 13:32:47`. This build has not run on the PSP itself: it is 1.0, which has, with fifteen on-screen texts given a capital letter.
 
 ## Disclosure
 

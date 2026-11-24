@@ -71,7 +71,7 @@ int main(void)
     sh_format_date(sh_minutes(2026, 11, 22, 21, 40), b, sizeof(b), 1);
     CHECK(!strcmp(b, "Sun Nov 22 21:40"), "dates are written with the weekday (2026-11-22 is a Sunday)");
     sh_format_ago(sh_minutes(2026, 11, 24, 14, 5), sh_minutes(2026, 11, 22, 21, 40), b, sizeof(b));
-    CHECK(!strcmp(b, "yesterday") || !strcmp(b, "2 days ago"), "'ago' text");
+    CHECK(!strcmp(b, "Yesterday") || !strcmp(b, "2 days ago"), "'ago' text");
     CHECK(sh_utf8_ascii("英雄伝説", b, sizeof(b)) == 0 && !strcmp(b, "????"), "Japanese text is noticed (one ? per character)");
     u8 lz[64] = { 0x40, 'a', 'b', 'c', 'd', 0x04, 0x00, 0x50, 'x', 'y', 'z', 'q', '!' }, lz2[8] = { 0x14, 'a', 0x01, 0x00 };
     u8 lo[64];
