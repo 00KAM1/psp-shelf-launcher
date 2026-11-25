@@ -68,6 +68,8 @@ The plugins are in their own repository, [psp-ark-plugins](https://github.com/00
 | **Emblem** | Achievement progress and the latest unlocks. |
 | **Runtime** | Time on and battery use counted in every program, with sleep counted apart. Without it Shelf keeps a simpler count itself. |
 
+**Shelf Tools** is a web page that reads the same files: its **Recap** shows your play for a year, a month or all time, including the games you marked completed in Shelf. It runs in your browser and changes nothing on the Memory Stick. Repository: [psp-shelf-tools](https://github.com/00KAM1/psp-shelf-tools). Open it at [00kam1.github.io/psp-shelf-tools](https://00kam1.github.io/psp-shelf-tools/).
+
 ### Resuming a game and save states
 
 > [!WARNING]
@@ -159,4 +161,4 @@ Shelf exists because other people shared their work first.
 
 No code was copied from psp5 or arkMenu; both were read as references.
 
-The plugins that fill Shelf's screens are in [psp-ark-plugins](https://github.com/00KAM1/psp-ark-plugins).
+The plugins that fill Shelf's screens are in [psp-ark-plugins](https://github.com/00KAM1/psp-ark-plugins), and the web tools are in [psp-shelf-tools](https://github.com/00KAM1/psp-shelf-tools).
