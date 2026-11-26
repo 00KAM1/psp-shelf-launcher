@@ -112,9 +112,17 @@ static const u16 *card_picture(ShUi *ui, int g)
 {
     int src = pic_source(ui, g);
     if (g_card[g] && g_card_src[g] == src) return g_card[g];
-    if (src < 0) return NULL;                               /* drawn as an icon on dark */
     char p[160];
     static u16 tmp[PIC_W * PIC_H];
+    if (src < 0) {                                          /* no slot picture: the game's icon, filling the card */
+        const u16 *ic = ui->lib->g[g].has_icon ? big_icon(ui, g) : NULL;
+        if (!ic) return NULL;                               /* no icon either: the caller draws the placeholder */
+        if (!g_card[g]) g_card[g] = malloc(CARD_W * CARD_H * 2);
+        if (!g_card[g]) return NULL;
+        img_scale565(ic, ICON_W, ICON_H, g_card[g], CARD_W, CARD_H);
+        g_card_src[g] = -1;
+        return g_card[g];
+    }
     data_thm_path(&ui->info[g], src, p, sizeof(p));
     if (img_read_thm(p, tmp, PIC_W, PIC_H) < 0) return NULL;
     if (!g_card[g]) g_card[g] = malloc(CARD_W * CARD_H * 2);

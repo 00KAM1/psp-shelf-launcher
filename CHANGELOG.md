@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2
+
+Replace `VBOOT.PBP` and `EBOOT.PBP`. Your settings, favourites and marks are kept.
+
+- **Home: every card in the Playing row is filled.** A game with no Sidequest state or suspend picture used to show its icon small, with a dark border around it, next to cards that were filled by a state picture. Its card is now the game's icon scaled to the whole card. A game with no icon still shows the placeholder, and the large picture at the top is unchanged.
+
 ## 1.1
 
 Replace `VBOOT.PBP` and `EBOOT.PBP`. Your settings, favourites and marks are kept.

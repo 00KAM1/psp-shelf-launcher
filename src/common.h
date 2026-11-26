@@ -9,7 +9,7 @@
 
 #include <psptypes.h>
 
-#define SH_VERSION_STR  "1.1"
+#define SH_VERSION_STR  "1.2"
 #define SH_BUILD_STAMP  __DATE__ " " __TIME__
 #ifndef SH_TAB_ALL
 #define SH_TAB_ALL      "Library"             /* the name of the tab that holds every game */

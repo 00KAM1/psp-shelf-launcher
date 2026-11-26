@@ -2,12 +2,14 @@
 
 **Shelf** is a home screen and game launcher for the PSP on ARK-5 custom firmware. It lists your PSP games, PS1 games and homebrew, remembers what you are playing, and shows what the plugins from [psp-ark-plugins](https://github.com/00KAM1/psp-ark-plugins) have recorded about each game: Sidequest save states, the Checkpoint journey and play time, and Emblem achievements.
 
+**On a PS Vita, use [psvita-shelf-launcher](https://github.com/00KAM1/psvita-shelf-launcher).** That is this launcher built for ARK-5 inside [Adrenaline 8](https://github.com/isage/Adrenaline), where USB, Shut down and Restart go through Adrenaline. The build here is for a real PSP and is not meant for a Vita. The Vita's plugins are in [psvita-ark-plugins](https://github.com/00KAM1/psvita-ark-plugins).
+
 Shelf runs on its own. The plugins are optional, and each one adds something to it.
 
 | | |
 |---|---|
-| Version | 1.1 |
-| Build | Nov 24 2026 13:32:47 |
+| Version | 1.2 |
+| Build | Nov 26 2026 09:00:17 |
 | Tested on | PSP-3000, firmware 6.61, ARK-5 |
 
 > **Disclosure.** Shelf was written by Claude, Anthropic’s AI model, from my ideas and my testing on a PSP-3000. I’m not a PSP programmer, and nothing has been tested beyond my own console. Please read the [known issues](docs/known-issues.md) before relying on it.
@@ -161,4 +163,4 @@ Shelf exists because other people shared their work first.
 
 No code was copied from psp5 or arkMenu; both were read as references.
 
-The plugins that fill Shelf's screens are in [psp-ark-plugins](https://github.com/00KAM1/psp-ark-plugins), and the web tools are in [psp-shelf-tools](https://github.com/00KAM1/psp-shelf-tools).
+The plugins that fill Shelf's screens are in [psp-ark-plugins](https://github.com/00KAM1/psp-ark-plugins), and the web tools are in [psp-shelf-tools](https://github.com/00KAM1/psp-shelf-tools). The PS Vita builds are in [psvita-shelf-launcher](https://github.com/00KAM1/psvita-shelf-launcher) and [psvita-ark-plugins](https://github.com/00KAM1/psvita-ark-plugins).
